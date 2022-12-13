@@ -65,6 +65,12 @@
     <Compile Include="Cadastros\frmNaturalidade.Designer.cs">
       <DependentUpon>frmNaturalidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cadastros\frmRelatoriosFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\frmRelatoriosFuncionarios.Designer.cs">
+      <DependentUpon>frmRelatoriosFuncionarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,7 @@
     </Compile>
     <Compile Include="Helpers\BuscarSeExisteNumeroNoTexto.cs" />
     <Compile Include="Helpers\FormatarCamposObrigatorios.cs" />
+    <Compile Include="Helpers\LimpaTelaDeFormulario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Cadastros\frmCadastroFuncionario.resx">
@@ -95,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastros\frmNaturalidade.resx">
       <DependentUpon>frmNaturalidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\frmRelatoriosFuncionarios.resx">
+      <DependentUpon>frmRelatoriosFuncionarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -147,6 +157,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo_para_fundo_escuro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\R.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

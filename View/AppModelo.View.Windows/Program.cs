@@ -28,7 +28,7 @@ namespace AppModelo.View.Windows
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal ());
+            Application.Run(new frmLogin());
 
             Environment.Exit(-1);
 
@@ -49,7 +49,7 @@ namespace AppModelo.View.Windows
             ShowExceptionDetails(e.ExceptionObject as Exception);
 
             //Suspenda o thread atual por enquanto para impedir que a exceção seja lançada.
-            Thread.CurrentThread.Suspend();
+            //Thread.CurrentThread.Suspend();
         }
 
         static void ShowExceptionDetails(Exception Ex)

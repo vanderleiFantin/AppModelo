@@ -69,6 +69,7 @@
             this.txtEnderecoCep = new System.Windows.Forms.MaskedTextBox();
             this.btnPesquisarCep = new System.Windows.Forms.Button();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.SaveButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -358,6 +359,7 @@
             this.cmbNacionalidade.Size = new System.Drawing.Size(156, 28);
             this.cmbNacionalidade.TabIndex = 31;
             this.cmbNacionalidade.Tag = "Obrigatorio";
+            this.cmbNacionalidade.SelectedIndexChanged += new System.EventHandler(this.cmbNacionalidade_SelectedIndexChanged);
             // 
             // label17
             // 
@@ -384,6 +386,7 @@
             this.cmbNaturalidade.Name = "cmbNaturalidade";
             this.cmbNaturalidade.Size = new System.Drawing.Size(130, 28);
             this.cmbNaturalidade.TabIndex = 33;
+            this.cmbNaturalidade.SelectedIndexChanged += new System.EventHandler(this.cmbNaturalidade_SelectedIndexChanged);
             // 
             // txtTelefoneContato
             // 
@@ -425,12 +428,23 @@
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(640, 475);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(115, 36);
+            this.SaveButton.TabIndex = 39;
+            this.SaveButton.Text = "Salvar";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
+            // 
             // frmCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(774, 523);
+            this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.btnPesquisarCep);
             this.Controls.Add(this.txtEnderecoCep);
             this.Controls.Add(this.txtTelefoneContato);
@@ -525,5 +539,6 @@
         private System.Windows.Forms.MaskedTextBox txtEnderecoCep;
         private System.Windows.Forms.Button btnPesquisarCep;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Button SaveButton;
     }
 }

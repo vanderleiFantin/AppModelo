@@ -1,19 +1,41 @@
 ﻿using AppModelo.Model.Domain.Entities;
 using AppModelo.Model.Infra.Repositories;
+using System;
 using System.Collections.Generic;
 
 namespace AppModelo.Controller.Cadastros
 {
     public class NaturalidadeController
     {
-        public bool Cadastrar(string descricao, bool status)
+        /// <summary>
+        /// Cadastrar - Inserir uma nova Naturalidade no NaturalidadeRepository.
+        /// </summary>
+        /// <param name="descricao"></param>
+        /// <param name="status"></param>
+        /// <returns>Insere a Naturalidade no banco de dados</returns>
+        public List<NaturalidadeEntity> DataSource { get; set; }
+
+        public bool Cadastrar(string descricao)
+        {
+            //quero colocar um botao de ativo e quero que avise se ja possui esse cadastro
+
+            //var naturalidade = repositorio.ObterTodos(descricao);
+           // if(naturalidade is not null) return false;
+            var repositorio = new NaturalidadeRepository();
+            
+            var resposta = repositorio.Inserir(descricao);
+            return resposta;
+        }
+        public bool Delete(string descricao)
         {
             var repositorio = new NaturalidadeRepository();
-
-            var naturalidade = repositorio.ObterPorDescricao(descricao);
-            if(naturalidade is not null) return false;
-
-            var resposta = repositorio.Inserir(descricao, status);
+            var resposta = repositorio.Remover(descricao);
+            return resposta;
+        }
+        public bool Update(string descricao)
+        {
+            var repositorio = new NaturalidadeRepository();
+            var resposta = repositorio.Atualizar(descricao);
             return resposta;
         }
 
@@ -24,5 +46,6 @@ namespace AppModelo.Controller.Cadastros
             return (List<NaturalidadeEntity>)resposta;
         }
 
+        
     }
 }
